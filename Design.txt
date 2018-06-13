@@ -1,0 +1,18 @@
+2018-06-14
+AQ <aq@okaq.com>
+https://github.com/okaq/teio
+
+Teio Design Doc
+
+Directory structure
+
+/ = all golang web app files
+/bop = static files for upload
+/pop = disk store for generated art assets
+
+sekkei.go - intro test page
+lets make sure every thing works :)
+
+sekkei.html - front end for
+generate and upload test
+
