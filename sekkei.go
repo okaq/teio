@@ -20,6 +20,8 @@ func SekkeiHandler(w http.ResponseWriter, r *http.Request) {
 func main() {
 	motd()
 	http.HandleFunc("/", SekkeiHandler)
+	fs := http.FileServer(http.Dir("bop"))
+	http.HandleFunc("/bop/", http.StripPrefix("/bop/", fs))
 	http.ListenAndServe(":8080", nil)
 }
 
