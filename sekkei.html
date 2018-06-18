@@ -25,16 +25,30 @@
             })();
 // game
 var g = {
-        "init": function() {
-            var t0 = window.performance.now();
+    "init": function() {
+        var t0 = window.performance.now();
 
-                        // stats
-                        console.log("total render time: " + (window.performance.now() - t0) + "ms.");
-        }
+        // start
+        window.setTimeout(g.start, 1000);
+
+        // stats
+        console.log("total render time: " + (window.performance.now() - t0) + "ms.");
+    },
+    "start": function() {
+        // fetch threejs
+        net.start();
+    }
+}
+// xhr
+var net = {
+    "start": function() {
+        
+    }
 }
         </script>
     </head>
     <body id="alpha">
     </body>
 </html>
+
 
