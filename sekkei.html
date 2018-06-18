@@ -36,9 +36,24 @@ var g = {
     },
     "start": function() {
         // fetch threejs
-        net.start();
+        // net.start();
+        gl.init();
     }
 }
+// 3D
+var gl = {
+    "init": function() {
+        // wrap in promise
+        gl.a = new Promise(function(resolve, reject) {
+            gl.b = document.createElement("script");
+            document.body.appendChild(gl.b);
+            gl.b.onload = resolve;
+            gl.b.onerror = reject;
+            gl.b.async = true;
+            gl.b.src = net.urls[0];
+        });
+    }
+}   
 // xhr
 var net = {
     "start": function() {
@@ -47,6 +62,8 @@ var net = {
         net.urls = [
             "http://localhost:8080/bop/three.min.js",
         ];
+    },
+    "start2": function() {
         window.fetch(net.urls[0])
             .then(net.three)
             .then(net.four);
