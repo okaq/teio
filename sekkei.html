@@ -42,7 +42,25 @@ var g = {
 // xhr
 var net = {
     "start": function() {
-        
+        // using fetch api 
+        // to async load three.min.js
+        net.urls = [
+            "http://localhost:8080/bop/three.min.js",
+        ];
+        window.fetch(net.urls[0])
+            .then(net.three)
+            .then(net.four);
+    },
+    "three": function(response) {
+        // json parse
+        return response.json();
+        // fetch api handles json data
+        // not async script loading
+        // use dynamic script tag
+    },
+    "four": function(json) {
+        // add to window class
+        console.log(json);
     }
 }
         </script>
