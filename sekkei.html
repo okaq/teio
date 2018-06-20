@@ -53,9 +53,24 @@ var gl = {
             gl.b.src = net.urls[0];
         });
         // call the promise
-        gl.a.then(function(res){console.log(window.THREE);}).then(function(err){console.log(err);});
+        // gl.a.then(function(res){console.log(window.THREE);}).then(function(err){console.log(err);});
         // we can chain together
         // as many promises as needed
+
+        gl.a
+            .then(gl.coop)
+            .then(gl.deck);
+        
+    },
+    "coop": function(res) {
+        // on three.js load
+        // we call screen manager
+        // to create a test scene
+        console.log(THREE);
+    },
+    "deck": function(err) {
+        // on error
+        console.log(err);
     }
 }   
 // xhr
@@ -89,5 +104,6 @@ var net = {
     <body id="alpha">
     </body>
 </html>
+
 
 
