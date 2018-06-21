@@ -38,6 +38,21 @@ var g = {
         // fetch threejs
         net.start();
         gl.init();
+    },
+    "scene": function() {
+        // attach the test canvas
+    }
+}
+// scene
+var sce = {
+    "init": function() {
+        // create the object
+        sce.a = THREE.scene();
+        // renderer
+        // camera
+        // geometry
+        // material
+        // cube mesh
     }
 }
 // 3D
@@ -67,6 +82,7 @@ var gl = {
         // we call screen manager
         // to create a test scene
         console.log(THREE);
+        g.scene();
     },
     "deck": function(err) {
         // on error
