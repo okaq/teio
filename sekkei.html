@@ -64,7 +64,10 @@ var sce = {
         // sce.b.domElement references webgl canvas
         sce.b.setSize(600,400);
         document.body.appendChild(sce.b.domElement);
-
+        // render
+        sce.a.add(sce.f);
+        sce.c.position.z = 5.0;
+        sce.b.render(sce.a, sce.c);
     }
 }
 // 3D
