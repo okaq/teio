@@ -55,10 +55,16 @@ var sce = {
         var r0 = 1920 / 1080;
         sce.c = new THREE.PerspectiveCamera(75, r0, 0.1, 1000);
         // geometry
+        sce.d = new THREE.BoxGeometry(1,1,1);
         // material
+        sce.e = new THREE.MeshBasicMaterial({color:0x00ff00});
         // cube mesh
+        sce.f = new THREE.Mesh(sce.d,sce.e);
         console.log(sce);
         // sce.b.domElement references webgl canvas
+        sce.b.setSize(600,400);
+        document.body.appendChild(sce.b.domElement);
+
     }
 }
 // 3D
