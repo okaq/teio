@@ -34,25 +34,31 @@ var g = {
         // stats
         console.log("total render time: " + (window.performance.now() - t0) + "ms.");
     },
-    "start": function() {
+    "start": function() {;
         // fetch threejs
         net.start();
         gl.init();
     },
     "scene": function() {
         // attach the test canvas
+        sce.init();
     }
 }
 // scene
 var sce = {
     "init": function() {
         // create the object
-        sce.a = THREE.scene();
+        sce.a = new THREE.Scene();
         // renderer
+        sce.b = new THREE.WebGLRenderer();
         // camera
+        var r0 = 1920 / 1080;
+        sce.c = new THREE.PerspectiveCamera(75, r0, 0.1, 1000);
         // geometry
         // material
         // cube mesh
+        console.log(sce);
+        // sce.b.domElement references webgl canvas
     }
 }
 // 3D
