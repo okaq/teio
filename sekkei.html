@@ -42,6 +42,24 @@ var g = {
     "scene": function() {
         // attach the test canvas
         sce.init();
+
+        // start the dual loops
+        g.tick = 0;
+        g.max = 16;
+        g.id = window.setInterval(g.frame, 1000);
+    },
+    "frame": function() {
+        // count
+        console.log("tick count: " + g.tick);
+
+        // check
+        if (g.tick >= g.max) {
+            console.log("anim done");
+            window.clearInterval(g.id);
+        }
+
+        // tick
+        g.tick = g.tick + 1;
     }
 }
 // scene
